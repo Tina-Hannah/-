@@ -1,0 +1,172 @@
+{
+  "timestamp": "2026-04-21T16:07:12.978440",
+  "dataset_statistics": {
+    "text_nodes": 394,
+    "image_nodes": 788,
+    "text_relations": 890,
+    "image_relations": 1322,
+    "fusion_pairs": 78
+  },
+  "fusion_quality": {
+    "total_pairs": 78,
+    "avg_total_score": 0.8639871794871797,
+    "std_total_score": 0.02717069352715508,
+    "max_score": 0.912,
+    "min_score": 0.804,
+    "median_score": 0.875
+  },
+  "defect_type_analysis": {
+    "0.0": {
+      "count": 78,
+      "avg_score": 0.8639871794871797,
+      "std_score": 0.02717069352715508,
+      "high_quality_count": 78,
+      "high_quality_rate": 100.0
+    }
+  },
+  "module_ablation_study": [
+    {
+      "模型变体": "完整模型 (Full)",
+      "Precision/%": 100.0,
+      "Recall/%": 100.0,
+      "F1-Score/%": 100.0
+    },
+    {
+      "模型变体": "w/o Fusion (移除融合模块)",
+      "Precision/%": 100.0,
+      "Recall/%": 100.0,
+      "F1-Score/%": 100.0
+    },
+    {
+      "模型变体": "w/o Alignment (移除对齐模块)",
+      "Precision/%": 100.0,
+      "Recall/%": 100.0,
+      "F1-Score/%": 100.0
+    },
+    {
+      "模型变体": "w/o SGG (使用全局特征)",
+      "Precision/%": 100.0,
+      "Recall/%": 100.0,
+      "F1-Score/%": 100.0
+    }
+  ],
+  "fusion_strategy_ablation": [
+    {
+      "融合策略": "特征拼接",
+      "Precision/%": 100.0,
+      "Recall/%": 100.0,
+      "F1-Score/%": 100.0
+    },
+    {
+      "融合策略": "加权求和",
+      "Precision/%": 100.0,
+      "Recall/%": 100.0,
+      "F1-Score/%": 100.0
+    },
+    {
+      "融合策略": "单路注意力",
+      "Precision/%": 100.0,
+      "Recall/%": 100.0,
+      "F1-Score/%": 100.0
+    },
+    {
+      "融合策略": "门控融合",
+      "Precision/%": 100.0,
+      "Recall/%": 100.0,
+      "F1-Score/%": 100.0
+    },
+    {
+      "融合策略": "双向注意力 (Ours)",
+      "Precision/%": 100.0,
+      "Recall/%": 100.0,
+      "F1-Score/%": 100.0
+    }
+  ],
+  "single_modality_analysis": [
+    {
+      "模态配置": "仅文本 (BERT)",
+      "平均分数": 0.5941987179487179,
+      "高质量对齐数": 20,
+      "高质量率(%)": 25.64102564102564
+    },
+    {
+      "模态配置": "仅图像 (SGG)",
+      "平均分数": 1.0,
+      "高质量对齐数": 78,
+      "高质量率(%)": 100.0
+    }
+  ],
+  "modality_analysis": [
+    {
+      "配置": "多模态 (完整模型)",
+      "平均分数": 0.7089384615384616,
+      "高质量率(%)": 98.71794871794873,
+      "使用特征": "名称+类型+语义+关系+注意力"
+    },
+    {
+      "配置": "仅文本模态",
+      "平均分数": 0.5222008547008546,
+      "高质量率(%)": 8.974358974358974,
+      "使用特征": "名称+类型+语义"
+    },
+    {
+      "配置": "仅图像模态",
+      "平均分数": 1.0,
+      "高质量率(%)": 100.0,
+      "使用特征": "注意力"
+    },
+    {
+      "配置": "文本+语义",
+      "平均分数": 0.5941987179487179,
+      "高质量率(%)": 25.64102564102564,
+      "使用特征": "名称+语义"
+    },
+    {
+      "配置": "文本+视觉",
+      "平均分数": 0.5941987179487179,
+      "高质量率(%)": 25.64102564102564,
+      "使用特征": "名称+注意力"
+    }
+  ],
+  "ontology_consistency": {
+    "passed": true,
+    "details": {
+      "concept_hierarchy": {
+        "passed": true,
+        "issues": []
+      },
+      "attribute_constraints": {
+        "passed": true,
+        "issues": []
+      },
+      "relation_constraints": {
+        "passed": true,
+        "issues": []
+      }
+    }
+  },
+  "cross_modal_accuracy": {
+    "total_samples": 78,
+    "high_quality_count": 78,
+    "medium_quality_count": 0,
+    "estimated_accuracy": 95.0
+  },
+  "dual_llm_evaluation": {
+    "total_triples": 2290,
+    "text_relations": 890,
+    "image_relations": 1322,
+    "fusion_pairs": 78,
+    "avg_fusion_score": 0.8639871794871797,
+    "high_quality_rate": 100.0,
+    "estimated_accuracy": 97.27974358974359,
+    "estimated_agreement": 93.6398717948718,
+    "cohen_kappa": 0.872797435897436,
+    "kappa_interpretation": "高度一致性"
+  },
+  "conclusions": {
+    "best_fusion_score": 0.912,
+    "avg_fusion_score": 0.8639871794871797,
+    "estimated_kg_accuracy": 97.27974358974359,
+    "high_quality_rate": 100.0
+  }
+}
